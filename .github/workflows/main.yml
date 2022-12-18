@@ -20,4 +20,4 @@ jobs:
         PUBLISH_REPOSITORY: iamthecloverly/blog
 
         # The branch the action should deploy to.
-        BRANCH: master
+        BRANCH: gh-pages
