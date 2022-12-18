@@ -17,4 +17,4 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.MY_TOKEN }}
           PUBLISH_REPOSITORY: iamthecloverly/blog
           BRANCH: gh-pages
-          PUBLISH_DIR: public
+          PUBLISH_DIR: site
