@@ -1,28 +1,20 @@
-name: Hexo Deploy GitHub Pages
+name: deploying Hexo project to GitHub pages
 on:
   push:
     branches:
       - master
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@master
 
-    - name: Build and Deploy
-      uses: theme-keep/hexo-deploy-github-pages-action@master
-      env:
-        PERSONAL_TOKEN: ${{ secrets.MY_TOKEN }}
-
-        # The repository the action should deploy to.
-        PUBLISH_REPOSITORY: iamthecloverly/blog
-
-        # The branch the action should deploy to.
-        BRANCH: gh-pages
-        
-    - name: Upload site artifact
-      uses: actions/upload-pages-artifact@v1
-      with:
-       path: "_site${{ steps.pages.outputs.base_path }}"
+      - name: Build and Deploy
+        uses: theme-keep/hexo-deploy-github-pages-action@master
+        env:
+          PERSONAL_TOKEN: ${{ secrets.MY_TOKEN }}
+          PUBLISH_REPOSITORY: iamthecloverly/blog
+          BRANCH: gh-pages
+          PUBLISH_DIR: ./public
